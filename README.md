@@ -27,4 +27,4 @@ WIP
 
 Deployed Page: [Github Deployed Page](WIP)
 
-Github repo: [Work-Day-Scheduler](https://github.com/ameridacas/CamelCase_Lab_Rats-)
+Github repo: [Spot-a-Random](https://github.com/ameridacas/CamelCase_Lab_Rats-)
