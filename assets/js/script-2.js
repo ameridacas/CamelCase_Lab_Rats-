@@ -1,7 +1,10 @@
 //code for top ten random songs goes here
 //Exo-MDR-CD2000
 
-var ExoSpotifyApi = process.env.SPOTIFY_API_KEY
+
+//create dummy spotify api as a variable called ExoSpotifyApi
+
+
 console.log(ExoSpotifyApi)
 
 var localRedirectUrl = 'http://localhost:5502/index.html'
