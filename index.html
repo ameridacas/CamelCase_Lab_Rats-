@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--tailwind.config = {}
+        theme: {}
+          extend: {}
+            colors: {}
+              clifford: '#da373d',-->
+    
     <title>Document</title>
 </head>
     <div>
-        Hello World!!!!
+    Spot-A-Random
     </div>
 <body>
+    <!--This will be the form if we need to login to us spotify Api-->
+    <form>
+        <label class="block">
+          <span class="block md:w-auto xl:w-auto flex-wrap bg-emerald-900 text-25px font-serif fw-100px text-center text-white">Enter Your Email Below</span>
+          <input type="login_email" class="peer ..."/>
+          <p class="mt-12 bg-emerald-600 invisible peer-invalid:visible text-red-800 text-sm">
+            Please provide a valid email address!
+          </p>
+        </label>
+    </form>
+<!--This will be the button that the user clicks on to generate a random song from Spotify Api -->
+    <div>
+        <div>Click the "Random" button below to Generate</div>
+      <button class="bg-emerald-600  hover:bg-transparent">
+        <label type="button" value="submit" >Random</label>
+      </button>
+    </div> 
     <link rel="stylesheet" href="./assets/js/script.js">
 </body>
 </html>
