@@ -1,35 +1,41 @@
-// This file contains the js code for getting the song lyrcis from the Genius API
+// This file contains the js code for seeing how many views a user-specified subject has had on Wikipedia in a ten day period.
 
-// Variables for interacting with html elements (will need to add more once we get it working)
-var song1Title = document.getElementById('placeholder1a');
-var song1Artist = document.getElementById('placeholder1b');
-var song1Lyrics = document.getElementById('placeholder1c');
 
-// **Draft function wrapper for getLyricsAPI function
+// This is a test variable representing the subject item selected by the user or taken from the movie api
+var subject = "Guardians of the Galaxy";
+
+// Replace spaces in subject with underscores
+var subjectConverted = subject.replace(/\s/g, "_");
+console.log(subjectConverted);
+
+
+// **Draft function wrapper for getViewsAPI function
 // function getLyricsAPI() {move end bracket to the bottom when uncommented}
 
 // placeholder lyrics URL variable
-var lyricsURL = 'https://api.github.com/orgs/nodejs/repos';
+var viewsURL = "https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/en.wikipedia/all-access/all-agents/" + subjectConverted + "/daily/2023070100/2023072700";
 
 
-// fetch request from Genius
-fetch(lyricsURL)
+// fetch request from wikimedia
+fetch(viewsURL)
     .then(function (response) {
         return response.json();
     })
-    .then(function (data) {
-        // console log for viewing full api data
-        console.log(data);
-        // for loop and console log for viewing specific keys from the fetched data (the below ".license" is a placeholder for now)
-        for (var i = 0; i < data.length; i++) {
-            console.log(data[i].license);
+    .then(function (viewsData) {
+        // variable and console for viewing full array data (developer tool only)
+        var subjectViews = viewsData;
+        console.log(subjectViews)
+        // Variable for adding up total views
+        var totalViews = 0
+
+        for (i = 0; i < 10; i++) {
+            console.log(viewsData.items[i].views)
+            // add up the views over the ten day period
+            totalViews = totalViews + viewsData.items[i].views
         }
-        // TO DO: set the text content of the html elements to the values pulled from the API (the user's top ten song titles, artists, and lyrics). watch video and review lessons. These are placeholders. We will need to add these for each song once we get this working.
-        song1Title.textContent = data[i].something1;
-        song1Artist.textContent = data[i].something2;
-        song1Lyrics.textContent = data[i].something3;
+
+        // Display the total views for the ten day period in the console
+        console.log(totalViews);
 
     })
 
-// **Draft code for get lyrics button
-    // fetchLyricsButton.addEventListener('click', getLyricsAPI);
