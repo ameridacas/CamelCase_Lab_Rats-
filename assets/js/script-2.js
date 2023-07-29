@@ -1,18 +1,55 @@
-//code for top ten random songs goes here
+//code for OMDB API
 //Exo-MDR-CD2000
 
-var ExoSpotifyApi = process.env.SPOTIFY_API_KEY
-console.log(ExoSpotifyApi)
+var omdbApi = '3a4b3de0';
 
-var localRedirectUrl = 'http://localhost:5502/index.html'
-var githubRedirectUrl = 'https://ameridacas.github.io/CamelCase_Lab_Rats-/'
-
-var clientId = '';
-
-var clientSecret = '';
-
-//my api key is in the .env file called SPOTIFY_API_KEY
-//only accessable on the server side (basically my computer)
+// http://www.omdbapi.com/?apikey=3a4b3de0
 
 
-// figure out the authentication for the spotify api
+// Send all data requests to:
+
+// http://www.omdbapi.com/?apikey=[yourkey]&
+
+
+// Poster API requests:
+
+// http://img.omdbapi.com/?apikey=[yourkey]&
+
+//parameters to use in the url
+
+// t = title
+// type = movie only for now
+// y = year
+
+// use %20 for the white space in the title
+
+
+var userInput = prompt("Enter Movie Name Here:");
+console.log("User typed:", userInput);
+
+
+//TODO: write js code that will input %20 for the white space in titles with more than one word
+
+// var encodedMovieTitle = userSearch.replace(/ /g, "%20");
+//var omdbFull = `https://www.omdbapi.com/?t=${movieTitle}&apikey=${omdbApi}&plot=full`;
+var omdbFull = `https://www.omdbapi.com/?t=${userInput}&apikey=${omdbApi}&plot=full`;
+console.log(omdbFull);
+
+fetch(omdbFull)
+  .then (function(response) {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error("Error occurred during fetch request");
+    }
+  })
+  .then (function(parsedMovieData) { //same as function(parsedMovieData)
+    console.log("Fetched Movie Data:", parsedMovieData);
+  })
+  .catch(error => {
+    console.error("Error occurred during fetch request:", error);
+  });
+
+// the above is the fully fetched data from the OMDB API. Must now implement the data into the HTML.
+
+
