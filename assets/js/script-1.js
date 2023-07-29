@@ -3,6 +3,7 @@
 // Variable for adding up total views
 var totalViews = 0
 // Array for storing past views
+// ***NOTE***Create objects for the past ten scores for this array to hold so that the movie title and the view count can be displayed. See the quiz challenge.
 var pastViewsArray = []
 
 // This function saves the historical view data from previous subjects.
