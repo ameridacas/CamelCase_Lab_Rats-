@@ -25,8 +25,24 @@ var omdbApi = '3a4b3de0';
 
 
 var userInput = prompt("Enter Movie Name Here:");
-console.log("User typed:", userInput);
 
+// Get the existing movie names from localStorage and split them into an array
+var existingInput = localStorage.getItem("userInputOmbdMovieName");
+var existingInputArray = existingInput ? existingInput.split(",") : [];
+
+// Check if the user's movie search already exists in the array
+if (!existingInputArray.includes(userInput)) {
+  // If it doesn't exist, add it to the array and update localStorage
+  existingInputArray.push(userInput);
+  localStorage.setItem("userInputOmbdMovieName", existingInputArray.join(","));
+  console.log("User Input Storage:", existingInputArray);
+} else {
+  // If it does exist, log a message to the console
+  console.log("Movie already exists in storage:", userInput);
+}
+
+// So Rick, use userInputOmbdMovieName and getItem to get the value of the user's movie search. User searches should stack in the local storage.
+//also accounts for movie being typed in twice. If it is, it will not be added to the array.
 
 //TODO: write js code that will input %20 for the white space in titles with more than one word
 
