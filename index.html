@@ -12,29 +12,40 @@
     
     <title>Document</title>
 </head>
-    <div>
-    Spot-A-Random
-    </div>
+    <h1 class="flex justify-center items-center bg-indigo-400 text-6xl p-20 font-serif">
+        <img type="image" value="popcorn-bg" class="bg-popcorn-bg ">
+    What About the Movie??
+        </img>
+    </h1>
 <body>
-    <!--This will be the form if we need to login to us spotify Api-->
-    <form>
-        <label class="block">
-          <span class="block md:w-auto xl:w-auto flex-wrap bg-emerald-900 text-25px font-serif fw-100px text-center text-white">Enter Your Email Below</span>
-          <input type="login_email" class="peer ..."/>
-          <p class="mt-12 bg-emerald-600 invisible peer-invalid:visible text-red-800 text-sm">
-            Please provide a valid email address!
-          </p>
-        </label>
+    <!--search bar and search button enter movie name here title,year,plot,release dat, rotten tomatoes rating-->
+    <form class="flex h-screen items-center bg-indigo-400 justify-center ">
+        <div class="w-3/4 h-3/4 p-6 m-2 shadow-lg bg-sky-800 justify-center rounded-md">
+            <span class="block md:w-auto xl:w-auto justify-center bg-sky-800 text-25px font-serif text-center text-white">Enter the Criteria Needed For Your Search Below</span>
+                <h1 class="text-white text-1xl">SearchBar</h1>
+                <hr class="pt-20px">
+                <label for="title" class="inline-block text-lg text-white mb-10px ml-2 ">Title</label>
+                <input type="text" id="search" class="border-2 w-auto mt-2 rounded-md ">
+                <label for="year" class="inline-block text-lg text-white mb-10px ml-2 ">Year</label>
+                <input type="text" id="search" class="border-2 w-auto mt-2 rounded-md ">
+                <label for="rating" class="inline-block text-lg text-white mb-10px ml-2 ">Rating</label>
+                <input type="text" id="search" class="border-2 w-auto mt-2 rounded-md ">
+                <label for="Plot" class="inline-block text-lg text-white mb-10px ml-2 ">Plot</label>
+                <input type="text" id="search" class="border-2 w-auto mt-2 p-10px rounded-md">
+                <label for="button" type="button" value="button" class="bg-indigo-800 w-24 h-7 ml-2 text-white text-center text-10px rounded-md">Search</label>
+                <!--Display the Api info from the Search here-->
+            <div class="block mt-8 bg-black text-white h-3/4 text-center" value="displaySearch" type="displaySearch">
+                    DISPLAY THE INFO FROM THE API HERE
+            </div>
+        </div>
     </form>
-<!--This will be the button that the user clicks on to generate a random song from Spotify Api -->
-    <div>
-        <div>Click the "Random" button below to Generate</div>
-      <button class="bg-emerald-600  hover:bg-transparent">
-        <label type="button" value="submit" >Random</label>
-      </button>
-    </div> 
-
+<!--This will be the footer of the page with a bg of a ticket-->
+    <footer class="flex justify-center items-center p-16 bg-indigo-400">
+        <img class="flex h-50px justify-center">
+            <label type="image" value="ticket-footer">Hello</label>
+        </img>    
+    </footer>
    <script src="./assets/js/script-1.js"></script>
-   <script src="/assets/js/script-2.js"></script>
+   <script src="./assets/js/script-2.js"></script>
 </body>
 </html>
