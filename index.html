@@ -12,59 +12,58 @@
     
     <title>Document</title>
 </head>
-    <h1 class="flex justify-center items-center bg-indigo-400 text-6xl p-20 font-serif">
-        <img type="image" value="popcorn-bg" class="bg-popcorn-bg ">
-    What About the Movie??
-        </img>
+    <h1 class="flex justify-center items-center text-6xl p-10 font-serif text-slate-50" style="text-shadow: 0 0 10px red; background-image: linear-gradient(black,black,black,black,black,black,black,white)" >
+    Film Discovery
     </h1>
 <body>
-    <!--search bar and search button enter movie name here title,year,plot,release date, rotten tomatoes rating-->
-    <form class="flex h-screen items-center bg-indigo-400 justify-center ">
-        <div class="w-3/4 h-4/5 p-6 m-2 shadow-2xl shadow-black bg-sky-800 justify-center rounded-md ">
-            
-            <span class="block md:w-auto xl:w-auto justify-center bg-sky-800 text-25px font-serif text-center text-white">Enter the Criteria Needed For Your Search Below</span>
-                <h1 class="text-white text-1xl">SearchBar</h1>
+    <!--search bar and search button enter movie name here title,year, release date, rotten tomatoes rating-->
+    <form class="flex h-screen items-center justify-center bg-no-repeat bg-cover" style="background-image: url(./assets/images/curtain-bg.webp);">
+        <div class="w-3/4 h-4/5 p-6 m-2 shadow-2xl shadow-white bg-black justify-center rounded-md ">
+             <span class="block md:w-auto xl:w-auto justify-center bg-black text-25px font-serif text-center text-white" style="text-shadow: 0 0 10px red;">Enter the Movie Title For Your Search Below</span>
+                <h1 class="text-white text-1xl" style="text-shadow: 0 0 10px red;">SearchBar</h1>
                 <hr class="pt-20px">
-                <label for="title" class="inline-block text-lg text-white mb-10px ml-2 ">Title</label>
+                <label for="title" class="inline-block text-lg text-white mb-10px ml-2 " style="text-shadow: 0 0 10px red;">Title</label>
                 <input type="text" id="search" class="border-2 w-auto mt-2 rounded-md ">
-                <label for="year" class="inline-block text-lg text-white mb-10px ml-2 ">Year</label>
-                <input type="text" id="search" class="border-2 w-auto mt-2 rounded-md ">
-                <label for="rating" class="inline-block text-lg text-white mb-10px ml-2 ">Rating</label>
-                <input type="text" id="search" class="border-2 w-auto mt-2 rounded-md ">
-                <label for="Plot" class="inline-block text-lg text-white mb-10px ml-2 ">Plot</label>
-                <input type="text" id="search" class="border-2 w-auto mt-2 p-10px rounded-md">
-                <label for="button" type="button" value="button" class="bg-indigo-800 w-24 h-7 ml-2 text-white text-center text-10px rounded-md">Search</label>
+                <label for="button" type="button" value="button" class="bg-indigo-800 w-24 h-7 ml-2 text-white text-center text-10px rounded-md ">Search</label>
                 <!--Display the Api info from the Search here-->
-            <div class="block mt-8 bg-black text-white h-3/4 text-center" value="displaySearch" type="displaySearch">
+            <block>
+            <div class="block flex-wrap mt-8 bg-black text-white text-center h-3/4 " value="displaySearch" type="displaySearch" style="text-shadow: 0 0 10px red;">
                     DISPLAY THE INFO FROM THE API HERE
-            </div>
+                <div id="poster" class="flex float-left">PLACEHOLDER</div>  
+                    <label for="year" class="inline-block float-right text-lg text-white mb-10px ml-2 justify-items-end">Year</label>
+                    <input id="year" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end">
+                    <label for="rating" class="inline-block text-lg text-white mb-10px ml-2 justify-items-end">Rating</label>
+                    <input id="rating" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end ">
+                    <label for="releaseDate" class="inline-block text-lg text-white mb-10px ml-2 justify-items-end">ReleaseDate</label>
+                    <input id="releaseDate" type="text" value="displaySearch" class="border-2 w-auto mt-2 p-10px rounded-md justify-items-end">
+                <div>    
+                    <div id="popularity2019" value="2019" type="text">  
+                        Popularity
+                    </div>
+                    <div id="popularity2020" value="2020" type="text"> 
+                        Popularity
+                    </div>
+                    <div id="popularity2021" value="2021" type="text">
+                        Popularity
+                    </div>
+                    <div id="popularity2022" value="2022" type="text">
+                        Popularity
+                    </div>
+                    <div id="popularity2023" value="2023" type="text">
+                        Popularity
+                    </div>
+                </div>
+            </block>   
         </div>
-        display: none;
-        <div id="popularity2019" value="2019" type="text">
-            Popularity
-        </div>
-        <div id="popularity2020" value="2020" type="text">
-            Popularity
-        </div>
-        <div id="popularity2021" value="2021" type="text">
-            Popularity
-        </div>
-        <div id="popularity2022" value="2022" type="text">
-            Popularity
-        </div>
-        <div id="popularity2023" value="2023" type="text">
-            Popularity
-        </div>
-
     <!--movie popularity number place holder, poster image place holder, title, year, rating, runtime, release date, genre, box-office #, 0 is INDB ,1-metic critic-->
     </form>
 <!--This will be the footer of the page with a bg of a ticket-->
-    <footer class="flex justify-center items-center p-16 bg-indigo-400">
+    <!--<footer class="flex justify-center items-center p-16 bg-indigo-400"  style="background-image: url(./assets/images/ticket-footer.jpg);">
         <img class="flex h-50px justify-center">
             <label type="image" value="ticket-footer">Hello</label>
         </img>    
-    </footer>
-   <script src="./assets/js/script-1.js"></script>
+    </footer>-->
    <script src="./assets/js/script-2.js"></script>
+   <script src="./assets/js/script-1.js"></script>
 </body>
 </html>
