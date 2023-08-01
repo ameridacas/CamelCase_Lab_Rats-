@@ -28,13 +28,13 @@ var userInput = prompt("Enter Movie Name Here:");
 
 // Get the existing movie names from localStorage and split them into an array
 var existingInput = localStorage.getItem("userInputOmbdMovieName");
-var existingInputArray = existingInput ? existingInput.split(",") : [];
+var existingInputArray = existingInput ? JSON.parse(existingInput) : [];
 
 // Check if the user's movie search already exists in the array
 if (!existingInputArray.includes(userInput)) {
   // If it doesn't exist, add it to the array and update localStorage
   existingInputArray.push(userInput);
-  localStorage.setItem("userInputOmbdMovieName", existingInputArray.join(","));
+  localStorage.setItem("userInputOmbdMovieName", JSON.stringify(existingInputArray));
   console.log("User Input Storage:", existingInputArray);
 } else {
   // If it does exist, log a message to the console
