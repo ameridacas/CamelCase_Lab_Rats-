@@ -23,49 +23,63 @@ var omdbApi = '3a4b3de0';
 
 // use %20 for the white space in the title
 
-
 var userInput = prompt("Enter Movie Name Here:");
+
+// Function to capitalize words and make articles and conjunctions lowercase
+function capitalizeTitle(title) {
+  var lowercaseWords = ['a', 'an', 'the', 'and', 'but', 'or', 'for', 'nor', 'on', 'at', 'to', 'from', 'by', 'in', 'of'];
+  var words = title.toLowerCase().split(' ');
+  for (var i = 0; i < words.length; i++) {
+    if (i === 0 || !lowercaseWords.includes(words[i])) {
+      words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1);
+    }
+  }
+  return words.join(' ');
+}
+
+// Capitalize the user's movie search and store it in a variable
+var capitalizedInput = capitalizeTitle(userInput);
 
 // Get the existing movie names from localStorage and split them into an array
 var existingInput = localStorage.getItem("userInputOmbdMovieName");
 var existingInputArray = existingInput ? JSON.parse(existingInput) : [];
 
-// Check if the user's movie search already exists in the array
-if (!existingInputArray.includes(userInput)) {
-  // If it doesn't exist, add it to the array and update localStorage
-  existingInputArray.push(userInput);
-  localStorage.setItem("userInputOmbdMovieName", JSON.stringify(existingInputArray));
-  console.log("User Input Storage:", existingInputArray);
-} else {
-  // If it does exist, log a message to the console
-  console.log("Movie already exists in storage:", userInput);
+// Function to check if the movie title was found (not "False" or "Movie not found!")
+function isMovieFound(movieData) {
+  return movieData.Response === "True";
 }
 
-// So Rick, use userInputOmbdMovieName and getItem to get the value of the user's movie search. User searches should stack in the local storage.
-//also accounts for movie being typed in twice. If it is, it will not be added to the array.
-
-//TODO: write js code that will input %20 for the white space in titles with more than one word
-
-// var encodedMovieTitle = userSearch.replace(/ /g, "%20");
-//var omdbFull = `https://www.omdbapi.com/?t=${movieTitle}&apikey=${omdbApi}&plot=full`;
-var omdbFull = `https://www.omdbapi.com/?t=${userInput}&apikey=${omdbApi}&plot=full`;
-console.log(omdbFull);
-
-fetch(omdbFull)
-  .then (function(response) {
+// Fetch movie data from OMDB API
+fetch(`https://www.omdbapi.com/?t=${userInput}&apikey=${omdbApi}&plot=full`)
+  .then(function (response) {
     if (response.ok) {
       return response.json();
     } else {
-      throw new Error("Error occurred during fetch request");
+      throw new Error("Error occurred during movie info fetch request");
     }
   })
-  .then (function(parsedMovieData) { //same as function(parsedMovieData)
+  .then(function (parsedMovieData) {
+    if (isMovieFound(parsedMovieData)) {
+      // If the movie is found, add it to the array and update localStorage
+      if (!existingInputArray.includes(capitalizedInput)) {
+        existingInputArray.push(capitalizedInput);
+        localStorage.setItem("userInputOmbdMovieName", JSON.stringify(existingInputArray));
+        console.log("User Input Storage:", existingInputArray);
+      } else {
+        // If it does exist, log a message to the console
+        console.log("Movie already exists in storage:", capitalizedInput);
+      }
+    } else {
+      // If the movie was not found, display a message
+      console.log("Movie not found:", capitalizedInput);
+    }
     console.log("Fetched Movie Data:", parsedMovieData);
   })
-  .catch(error => {
+  .catch(function (error) {
     console.error("Error occurred during fetch request:", error);
   });
 
-// the above is the fully fetched data from the OMDB API. Must now implement the data into the HTML.
 
 
+  //grabs the poster
+  fetch(`https://img.omdbapi.com/?apikey=${omdbApi}&`)
