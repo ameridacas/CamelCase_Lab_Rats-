@@ -1,5 +1,12 @@
 // This file contains the js code for seeing how many views a user-specified subject has had on Wikipedia in a ten day period.
 
+// Variables for popularity display elements by year
+var popularity2019El = document.getElementById("popularity2019");
+var popularity2020El = document.getElementById("popularity2020");
+var popularity2021El = document.getElementById("popularity2021");
+var popularity2022El = document.getElementById("popularity2022");
+var popularity2022El = document.getElementById("popularity2023");
+
 // Variables for adding up total views
 var totalViews = 0;
 var totalViews2019 = 0;
@@ -9,10 +16,13 @@ var totalViews2022 = 0;
 var totalViews2023 = 0;
 
 
-// This is a test variable representing the subject item selected by the user or taken from the movie api
-// var subject = "Guardians of the Galaxy";
+// Test variable for manipulation without using form input.
+// var subject = "Game of Thrones";
 
-var subject = "Avatar";
+// Live variable using form input.
+
+var subject = userInput;
+
 console.log(subject);
 
 
@@ -141,7 +151,19 @@ fetch(viewsURL2023)
         // Display the total views for the year in the console
         console.log("Total Views 2023: " + totalViews2023);
         
-
     })
+
+    // Populate Popularity HTML Elements with values
+    popularity2019El.textContent = "2019: " + totalViews2019;
+    popularity2020El.textContent = "2020: " + totalViews2019totalViews2020;
+    popularity2021El.textContent = "2021: " + totalViews2019totalViews2021;
+    popularity2022El.textContent = "2022: " + totalViews2019totalViews2022;
+    popularity2023El.textContent = "2023: " + totalViews2019totalViews2023;
+
+
+    
+ 
+//  "Poster image" "run time" "release date" "title"
+    // display = block
 
 
