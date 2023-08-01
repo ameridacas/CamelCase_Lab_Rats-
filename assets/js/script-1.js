@@ -1,3 +1,10 @@
+// TODO:
+// 1. Get local storage value from Jose's code to get title
+// 2. Create code to populate elements on webpage, look at the created divs
+// 3. Figure out how to ccess the movie object and get data from it
+// 4. update the class of the elements from display=none to display=block. 
+
+
 // This file contains the js code for seeing how many views a user-specified subject has had on Wikipedia in a ten day period.
 
 // Variables for popularity display elements by year
@@ -17,13 +24,11 @@ var totalViews2023 = 0;
 
 
 // Test variable for manipulation without using form input.
-// var subject = "Game of Thrones";
+// var subject = "Gladiator";
 
 // Live variable using form input.
-
 var subject = userInput;
-
-console.log(subject);
+// console.log(subject);
 
 
 // Replace spaces in subject with underscores
@@ -154,16 +159,15 @@ fetch(viewsURL2023)
     })
 
     // Populate Popularity HTML Elements with values
-    popularity2019El.textContent = "2019: " + totalViews2019;
-    popularity2020El.textContent = "2020: " + totalViews2019totalViews2020;
-    popularity2021El.textContent = "2021: " + totalViews2019totalViews2021;
-    popularity2022El.textContent = "2022: " + totalViews2019totalViews2022;
-    popularity2023El.textContent = "2023: " + totalViews2019totalViews2023;
+    // popularity2019El.textContent = "2019: " + totalViews2019;
+    // popularity2020El.textContent = "2020: " + totalViews2020;
+    // popularity2021El.textContent = "2021: " + totalViews2021;
+    // popularity2022El.textContent = "2022: " + totalViews2022;
+    // popularity2023El.textContent = "2023: " + totalViews2023;
 
 
     
  
-//  "Poster image" "run time" "release date" "title"
-    // display = block
+
 
 
