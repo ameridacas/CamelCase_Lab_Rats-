@@ -12,7 +12,7 @@ var popularity2019El = document.getElementById("popularity2019");
 var popularity2020El = document.getElementById("popularity2020");
 var popularity2021El = document.getElementById("popularity2021");
 var popularity2022El = document.getElementById("popularity2022");
-var popularity2022El = document.getElementById("popularity2023");
+var popularity2023El = document.getElementById("popularity2023");
 
 // Variables for adding up total views
 var totalViews = 0;
@@ -158,15 +158,18 @@ fetch(viewsURL2023)
         
     })
 
-    // Populate Popularity HTML Elements with values
-    // popularity2019El.textContent = "2019: " + totalViews2019;
-    // popularity2020El.textContent = "2020: " + totalViews2020;
-    // popularity2021El.textContent = "2021: " + totalViews2021;
-    // popularity2022El.textContent = "2022: " + totalViews2022;
-    // popularity2023El.textContent = "2023: " + totalViews2023;
-
-
     
+    function populateElements() { 
+    popularity2019El.textContent = "2019: " + totalViews2019;
+    popularity2020El.textContent = "2020: " + totalViews2020;
+    popularity2021El.textContent = "2021: " + totalViews2021;
+    popularity2022El.textContent = "2022: " + totalViews2022;
+    popularity2023El.textContent = "2023: " + totalViews2023;
+    
+    }
+
+    setTimeout(populateElements, 1000) 
+    // Populate Popularity HTML Elements with values
  
 
 
