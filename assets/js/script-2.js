@@ -74,12 +74,37 @@ fetch(`https://www.omdbapi.com/?t=${userInput}&apikey=${omdbApi}&plot=full`)
       console.log("Movie not found:", capitalizedInput);
     }
     console.log("Fetched Movie Data:", parsedMovieData);
+
+
+    
+    // Fetch similar movie titles from OMDB API
+    fetch(`https://www.omdbapi.com/?s=${userInput}&apikey=${omdbApi}`)
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error occurred during similar movie titles fetch request");
+        }
+      })
+      .then(function (parsedSimilarMovieData) {
+        if (parsedSimilarMovieData.Response === "True") {
+          // If similar movies were found, display a list of their titles
+          var similarMovies = parsedSimilarMovieData.Search.map(function (movie) {
+            return movie.Title;
+          });
+          console.log("Similar Movies:", similarMovies);
+          localStorage.setItem("similarMovies", JSON.stringify(similarMovies)); //stores the similar movies in local storage
+        } else {
+          // If no similar movies were found, display a message
+          console.log("No similar movies found for:", capitalizedInput);
+        }
+      })
+      .catch(function (error) {
+        console.error("Error occurred during fetch request:", error);
+      });
   })
   .catch(function (error) {
     console.error("Error occurred during fetch request:", error);
   });
 
-
-
-  //grabs the poster
-  fetch(`https://img.omdbapi.com/?apikey=${omdbApi}&`)
+// Above fetch request for possible autocomplete feature?
