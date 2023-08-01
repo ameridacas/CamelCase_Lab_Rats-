@@ -18,6 +18,7 @@
 <body>
     <!--search bar and search button enter movie name here title,year, release date, rotten tomatoes rating-->
     <form class="flex h-screen items-center justify-center bg-no-repeat bg-cover" style="background-image: url(./assets/images/curtain-bg.webp);">
+        <main id="displayDATA" style="display: none;" index="0"></main>
         <div class="w-3/4 h-4/5 p-6 m-2 shadow-2xl shadow-white bg-black justify-center rounded-md ">
              <span class="block md:w-auto xl:w-auto justify-center bg-black text-25px font-serif text-center text-white" style="text-shadow: 0 0 10px red;">Enter the Movie Title For Your Search Below</span>
                 <h1 class="text-white text-1xl" style="text-shadow: 0 0 10px red;">SearchBar</h1>
@@ -56,7 +57,8 @@
             </block>   
         </div>
     <!--movie popularity number place holder, poster image place holder, title, year, rating, runtime, release date, genre, box-office #, 0 is INDB ,1-metic critic-->
-    </form>
+    </main>
+    </form>    
 <!--This will be the footer of the page with a bg of a ticket-->
     <!--<footer class="flex justify-center items-center p-16 bg-indigo-400"  style="background-image: url(./assets/images/ticket-footer.jpg);">
         <img class="flex h-50px justify-center">
