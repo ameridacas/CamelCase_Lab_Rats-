@@ -166,6 +166,11 @@ fetch(viewsURL2023)
     popularity2022El.textContent = "2022: " + totalViews2022;
     popularity2023El.textContent = "2023: " + totalViews2023;
     
+    console.log(parsedMovieDataObject);
+    console.log(parsedMovieDataObject.Actors);
+    console.log(parsedMovieDataObject.Director);
+    console.log(parsedMovieDataObject.Plot);
+
     }
 
     setTimeout(populateElements, 1000) 
