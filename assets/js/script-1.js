@@ -187,11 +187,11 @@ function retrieveData() {
         var totalViews2023Format = totalViews2023.toLocaleString("en-US");
 
         // Send popularity data to HTML
-        popularity2019El.textContent = "2019:\xa0\xa0" + totalViews2019Format;
-        popularity2020El.textContent = "2020:\xa0\xa0" + totalViews2020Format;
-        popularity2021El.textContent = "2021:\xa0\xa0" + totalViews2021Format;
-        popularity2022El.textContent = "2022:\xa0\xa0" + totalViews2022Format;
-        popularity2023El.textContent = "2023:\xa0\xa0" + totalViews2023Format;
+        popularity2019El.textContent = "Popularity 2019:\xa0\xa0" + totalViews2019Format;
+        popularity2020El.textContent = "Popularity 2020:\xa0\xa0" + totalViews2020Format;
+        popularity2021El.textContent = "Popularity 2021:\xa0\xa0" + totalViews2021Format;
+        popularity2022El.textContent = "Popularity 2022:\xa0\xa0" + totalViews2022Format;
+        popularity2023El.textContent = "Popularity 2023:\xa0\xa0" + totalViews2023Format;
 
         // Send movie data to HTML
         titleEl.textContent = "Title:\xa0\xa0" + parsedMovieDataObject.Title;
