@@ -1,10 +1,3 @@
-// TODO:
-// 1. Get local storage value from Jose's code to get title
-// 2. Create code to populate elements on webpage, look at the created divs
-// 3. Figure out how to ccess the movie object and get data from it
-// 4. update the class of the elements from display=none to display=block. 
-
-
 // This file contains the js code for seeing how many views a user-specified subject has had on Wikipedia in a ten day period.
 
 // Variables for popularity display elements by year
@@ -22,15 +15,14 @@ popularity2022El.textContent = "";
 popularity2023El.textContent = "";
 
 // Variables for movie info display elements
-// var titleEl = document.getElementById("title");
-// var releaseDateEl = document.getElementById("releaseDate");
-// var actorsEl = document.getElementById("TBD");
-// var directorEl = document.getElementById("TBD");
-// var plotEl = document.getElementById("TBD");
-// var boxOfficeEl = document.getElementById("TBD");
-// var runtimeEl = document.getElementById("TBD");
-// var genreEl = document.getElementById("genre");
-// var posterEl = document.getElementById("poster");
+var titleEl = document.getElementById("title");
+var releaseDateEl = document.getElementById("releaseDate");
+var yearEl = document.getElementById("year");
+var ratingEl = document.getElementById("rating");
+var boxOfficeEl = document.getElementById("box-office");
+var runtimeEl = document.getElementById("runtime");
+var genreEl = document.getElementById("genre");
+var posterEl = document.getElementById("poster");
 
 // Variables for adding up total views
 var totalViews = 0;
@@ -186,7 +178,7 @@ function retrieveData() {
     function populateElements() {
 
         var parsedMovieDataObject = JSON.parse(localStorage.getItem("storedparsedMovieData"));
-        
+
         // Add commas to popularity numbers
         var totalViews2019Format = totalViews2019.toLocaleString("en-US");
         var totalViews2020Format = totalViews2020.toLocaleString("en-US");
@@ -202,24 +194,22 @@ function retrieveData() {
         popularity2023El.textContent = "2023:\xa0\xa0" + totalViews2023Format;
 
         // Send movie data to HTML
-        // titleEl.textContent = parsedMovieDataObject.Title;
-        // releaseDateEl.textContent = parsedMovieDataObject.Released;
-        // actorsEl.textContent = parsedMovieDataObject.Actors;
-        // directorEl.textContent = parsedMovieDataObject.Director;
-        // plotEl.textContent = parsedMovieDataObject.Plot;
-        // boxOfficeEl.textContent = parsedMovieDataObject.BoxOffice;
-        // runtimeEl.textContent = parsedMovieDataObject.Runtime;
-        // genreEl.textContent = parsedMovieDataObject.Genre;
-        // posterEl.setAttribute("src", parsedMovieDataObject.Poster)
+        titleEl.textContent = "Title:\xa0\xa0" + parsedMovieDataObject.Title;
+        genreEl.textContent = "Genre:\xa0\xa0" + parsedMovieDataObject.Genre;
+        releaseDateEl.textContent = "Release Date:\xa0\xa0" + parsedMovieDataObject.Released;
+        yearEl.textContent = "Year:\xa0\xa0" + parsedMovieDataObject.Year;
+        ratingEl.textContent = "Rating:\xa0\xa0" + parsedMovieDataObject.Ratings[0].Source + "\xa0\xa0" + parsedMovieDataObject.Ratings[0].Value;
+        runtimeEl.textContent = "Runtime:\xa0\xa0" + parsedMovieDataObject.Runtime;
+        boxOfficeEl.textContent = "Box Office:\xa0\xa0" + parsedMovieDataObject.BoxOffice;
+        posterEl.setAttribute("src", parsedMovieDataObject.Poster)
 
         // Send movie data to console
 
         console.log(parsedMovieDataObject);
         console.log(parsedMovieDataObject.Title);
         console.log(parsedMovieDataObject.Released);
-        console.log(parsedMovieDataObject.Actors);
-        console.log(parsedMovieDataObject.Director);
-        console.log(parsedMovieDataObject.Plot);
+        console.log(parsedMovieDataObject.Year);
+        console.log(parsedMovieDataObject.Rating);
         console.log(parsedMovieDataObject.BoxOffice);
         console.log(parsedMovieDataObject.Runtime);
         console.log(parsedMovieDataObject.Genre);
