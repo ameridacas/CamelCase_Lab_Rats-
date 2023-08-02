@@ -24,18 +24,23 @@ var runtimeEl = document.getElementById("runtime");
 var genreEl = document.getElementById("genre");
 var posterEl = document.getElementById("poster");
 
-// Variables for adding up total views
-var totalViews = 0;
-var totalViews2019 = 0;
-var totalViews2020 = 0;
-var totalViews2021 = 0;
-var totalViews2022 = 0;
-var totalViews2023 = 0;
-
+// Create variables for adding up total views
+var totalViews2019;
+var totalViews2020;
+var totalViews2021;
+var totalViews2022;
+var totalViews2023;
 
 function retrieveData() {
 
-    
+    // Initialize variables for adding up total views
+totalViews2019 = 0;
+totalViews2020 = 0;
+totalViews2021 = 0;
+totalViews2022 = 0;
+totalViews2023 = 0;
+
+// Pull Movie Title from local storage
     var subject = JSON.parse(localStorage.getItem("storedcapitalizedInput"));
 
     // Test variable for manipulation without using form input.
@@ -177,6 +182,7 @@ function retrieveData() {
 
     function populateElements() {
 
+        // Pull movie object from local storage
         var parsedMovieDataObject = JSON.parse(localStorage.getItem("storedparsedMovieData"));
 
         // Add commas to popularity numbers
