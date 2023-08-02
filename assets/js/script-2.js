@@ -23,6 +23,10 @@ var omdbApi = '3a4b3de0';
 
 // use %20 for the white space in the title
 
+
+
+
+
 var userInput = prompt("Enter Movie Name Here:");
 
 // Function to capitalize words and make articles and conjunctions lowercase
@@ -108,3 +112,37 @@ fetch(`https://www.omdbapi.com/?t=${userInput}&apikey=${omdbApi}&plot=full`)
   });
 
 // Above fetch request for possible autocomplete feature?
+
+
+var checkStorage = localStorage.getItem("userInputOmbdMovieName");
+console.log("Value of checkStorage:", checkStorage);
+
+
+
+//create a fx that will grab exactly what the user typed in and store it in local storage
+//and allow it to be overwritten if the user types in a new movie title
+//this will be seperate data from the localStorage for movie search history
+
+
+//create event listener for the search button
+
+
+//TODO: Wait until tomorrow morning for Alex to change the html and css for the search bar
+
+
+// document.getElementById("search").addEventListener("keydown", function(e) {
+//   if (e.key === "Enter") {
+//     dynamicUserInput();
+//     console.log("Enter key was pressed");
+//   }
+// });
+
+
+
+// function dynamicUserInput() {
+//   prevent.default();
+//   var userInput = document.getElementById("search").value;
+//   localStorage.setItem("dynamic User Input", userInput);
+//   console.log("User Input:", userInput);
+// };
+
