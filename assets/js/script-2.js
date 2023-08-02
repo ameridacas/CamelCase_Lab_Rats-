@@ -241,6 +241,10 @@ var checkStorage = localStorage.getItem("userInputOmbdMovieName");
 console.log("Value of checkStorage:", checkStorage);
 
 
+localStorage.setItem("storedparsedMovieData", JSON.stringify(parsedMovieData));
+localStorage.setItem("storedcapitalizedInput", JSON.stringify(capitalizedInput));
+
+//TODO: Requested code above
 
 //create a fx that will grab exactly what the user typed in and store it in local storage
 //and allow it to be overwritten if the user types in a new movie title
