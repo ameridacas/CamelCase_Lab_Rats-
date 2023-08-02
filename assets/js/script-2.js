@@ -23,6 +23,26 @@ var omdbApi = '3a4b3de0';
 
 // use %20 for the white space in the title
 
+var searchText = document.getElementById("searchField");
+var searchButton = document.getElementById("searchButton");
+
+function addSearchEventListeners() {
+  searchText.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      console.log("Enter key was pressed");
+      // Call function to fetch movie data here
+    }
+  });
+
+  searchButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log("Search button was clicked");
+    // Call function to fetch movie data here
+  });
+}
+
+addSearchEventListeners();
 
 
 
