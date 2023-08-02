@@ -3,11 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
-</head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--tailwind.config = {}
+        theme: {}
+          extend: {}
+            colors: {}
+              clifford: '#da373d',-->
     
+    <title>Film Discovery</title>
+</head>
+<<<<<<< HEAD
+    
+=======
+    <h1 class="flex justify-center items-center text-6xl p-10 font-serif text-slate-50" style="text-shadow: 0 0 10px red; background-image: linear-gradient(black,black,black,black,black,black,black,white)" >
+    Film Discovery
+    </h1>
+>>>>>>> main
 <body>
-    <link rel="stylesheet" href="./assets/js/script.js">
+    <!--search bar and search button enter movie name here title,year, release date, rotten tomatoes rating-->
+    <form class="flex h-screen items-center justify-center bg-no-repeat bg-cover" style="background-image: url(./assets/images/curtain-bg.webp);">
+        <main id="displayD" style="display: none;" index="0"></main>
+        <div class="w-3/4 h-4/5 p-6 m-2 shadow-2xl shadow-white bg-black justify-center rounded-md ">
+             <span class="block md:w-auto xl:w-auto justify-center bg-black text-xl font-serif text-center text-white" style="text-shadow: 0 0 10px red;">Enter the Movie Title For Your Search Below</span>
+                <h1 class="text-white text-2xl" style="text-shadow: 0 0 10px red;">SearchBar</h1>
+                <hr class="pt-20px">
+            <!--<label for="title" class="inline-block text-lg text-white mb-10px ml-2 " style="text-shadow: 0 0 10px red;">Title</label>
+                <input type="text" id="search" class="border-2 w-auto mt-2 rounded-md ">-->
+                <!-- <label for="button" type="button" value="button" class="bg-indigo-800 w-24 h-7 ml-2 text-white text-center text-10px rounded-md ">Search</label>-->
+                <div class="flex items-center justify-center mt-2">
+                    <label for="searchField" class="inline-block text-3xl mr-1 text-white mb-10px ml-2 " style="text-shadow: 0 0 10px red;">Title:</label>
+                    <input id="searchField" type="text" placeholder="Search Movie" class="px-4 py-2 h-10 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-600 bg-indigo-200 text-gray-800">
+                    <button id="searchButton" class="px-4 py-2 w-24 h-10 rounded-r-lg bg-indigo-800 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-800 border-2">
+                      Search
+                    </button>
+                  </div>
+                <!--Display the Api info from the Search here-->
+            <block>
+            <div class="grid grid-cols-2 gap-4 flex-wrap mt-8 bg-black text-white text-center h-3/4 align-items" value="displaySearch" type="displaySearch" style="text-shadow: 0 0 10px red;">
+                <img id="poster" class="flex">PLACEHOLDER</img>
+                    <!--This will be for the OMDB api data container-->
+                        <!--<label for="year" class="block float-right text-lg text-white mb-10px ml-2 justify-items-end">Year</label>
+                        <input id="year" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end">
+                        <label for="rating" class="block text-lg text-white mb-10px ml-2 justify-items-end">Rating</label>
+                        <input id="rating" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end ">
+                        <label for="releaseDate" class="block text-lg text-white mb-10px ml-2 justify-items-end">ReleaseDate</label>
+                        <input id="releaseDate" type="text" value="displaySearch" class="border-2 w-auto mt-2 p-10px rounded-md justify-items-end">-->
+                    <div>
+                        <div id="title" value="title" type="text" class="">Title</div>
+                        <div id="genre" value="genre" type="text" class="">Genre</div>
+                        <div id="releaseDate" value="releaseDate" type="text" class="">ReleaseDate</div>
+                        <div id="year" value="year" type="text" class="">YEAR</div>
+                        <div id="rating" value="rating" type="text" class="">Rating</div>
+                        <div id="runtime" value="runtime" type="text" class="">Runtime</div>
+                        <div id="box-office" value="box-office" type="text" class="">Box-Office</div>
+                    
+                    <!--popularity api containers-->
+                        <div>   
+                            <div id="popularity2019" value="2019" type="text" class=""></div>
+                            <div id="popularity2020" value="2020" type="text" class=""></div>
+                            <div id="popularity2021" value="2021" type="text" class=""></div>
+                            <div id="popularity2022" value="2022" type="text" class=""></div>
+                            <div id="popularity2023" value="2023" type="text" class=""></div>  
+                        </div>
+                    </div>
+                </div>
+            </block>   
+        </div>
+    <!--movie popularity number place holder, poster image place holder, title, year, rating, runtime, release date, genre, box-office #, 0 is INDB ,1-metic critic-->
+    </main>
+    </form>    
+<!--This will be the footer of the page with a bg of a ticket-->
+    <!--<footer class="flex justify-center items-center p-16 bg-indigo-400"  style="background-image: url(./assets/images/ticket-footer.jpg);">
+        <img class="flex h-50px justify-center">
+            <label type="image" value="ticket-footer">Hello</label>
+        </img>    
+    </footer>-->
+   <script src="./assets/js/script-2.js"></script>
+   <script src="./assets/js/script-1.js"></script>
 </body>
 </html>
