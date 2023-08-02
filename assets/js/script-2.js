@@ -103,6 +103,8 @@ function fetchMovieData() {
         console.log("Movie not found:", capitalizedInput);
       }
       console.log("Fetched Movie Data:", parsedMovieData);
+      localStorage.setItem("storedparsedMovieData", JSON.stringify(parsedMovieData));
+      localStorage.setItem("storedcapitalizedInput", JSON.stringify(capitalizedInput));
 
       // Fetch similar movie titles from OMDB API
       fetch(`https://www.omdbapi.com/?s=${userInput}&apikey=${omdbApi}`)
@@ -241,8 +243,6 @@ var checkStorage = localStorage.getItem("userInputOmbdMovieName");
 console.log("Value of checkStorage:", checkStorage);
 
 
-localStorage.setItem("storedparsedMovieData", JSON.stringify(parsedMovieData));
-localStorage.setItem("storedcapitalizedInput", JSON.stringify(capitalizedInput));
 
 //TODO: Requested code above
 
