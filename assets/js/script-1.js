@@ -14,6 +14,15 @@ var popularity2021El = document.getElementById("popularity2021");
 var popularity2022El = document.getElementById("popularity2022");
 var popularity2023El = document.getElementById("popularity2023");
 
+// Variables for movie info display elements
+var actorsEl = document.getElementById("TBD");
+var directorEl = document.getElementById("TBD");
+var plotEl = document.getElementById("TBD");
+var boxOfficeEl = document.getElementById("TBD");
+var runtimeEl = document.getElementById("TBD");
+var genreEl = document.getElementById("TBD");
+var posterEl = document.getElementById("TBD");
+
 // Variables for adding up total views
 var totalViews = 0;
 var totalViews2019 = 0;
@@ -73,7 +82,7 @@ fetch(viewsURL2019)
 
         // Display the total views for the year in the console
         console.log("Total Views 2019: " + totalViews2019);
-        
+
     })
 
 
@@ -94,7 +103,7 @@ fetch(viewsURL2020)
 
         // Display the total views for the year in the console
         console.log("Total Views 2020: " + totalViews2020);
-        
+
 
     })
 
@@ -115,7 +124,7 @@ fetch(viewsURL2021)
 
         // Display the total views for the year in the console
         console.log("Total Views 2021: " + totalViews2021);
-        
+
 
     })
 
@@ -135,7 +144,7 @@ fetch(viewsURL2022)
         }
         // Display the total views for the year in the console
         console.log("Total Views 2022: " + totalViews2022);
-        
+
 
     })
 
@@ -155,27 +164,51 @@ fetch(viewsURL2023)
         }
         // Display the total views for the year in the console
         console.log("Total Views 2023: " + totalViews2023);
-        
+
     })
 
-    
-    function populateElements() { 
-    popularity2019El.textContent = "2019: " + totalViews2019;
-    popularity2020El.textContent = "2020: " + totalViews2020;
-    popularity2021El.textContent = "2021: " + totalViews2021;
-    popularity2022El.textContent = "2022: " + totalViews2022;
-    popularity2023El.textContent = "2023: " + totalViews2023;
-    
+
+function populateElements() {
+    // Add commas to popularity numbers
+    var totalViews2019Format = totalViews2019.toLocaleString("en-US");
+    var totalViews2020Format = totalViews2020.toLocaleString("en-US");
+    var totalViews2021Format = totalViews2021.toLocaleString("en-US");
+    var totalViews2022Format = totalViews2022.toLocaleString("en-US");
+    var totalViews2023Format = totalViews2023.toLocaleString("en-US");
+
+    // Send popularity data to HTML
+    popularity2019El.textContent = "2019: \xa0\xa0" + totalViews2019Format;
+    popularity2020El.textContent = "2020: \xa0\xa0" + totalViews2020Format;
+    popularity2021El.textContent = "2021: \xa0\xa0" + totalViews2021Format;
+    popularity2022El.textContent = "2022: \xa0\xa0" + totalViews2022Format;
+    popularity2023El.textContent = "2023: \xa0\xa0" + totalViews2023Format;
+
+    // Send movie data to HTML
+    actorsEl.textContent = parsedMovieDataObject.Actors;
+    directorEl.textContent = parsedMovieDataObject.Director;
+    plotEl.textContent = parsedMovieDataObject.Plot;
+    boxOfficeEl.textContent = parsedMovieDataObject.BoxOffice;
+    runtimeEl.textContent = parsedMovieDataObject.Runtime;
+    genreEl.textContent = parsedMovieDataObject.Genre;
+    posterEl.setAttribute("src", parsedMovieDataObject.Poster)
+
+    // Send movie data to console
     console.log(parsedMovieDataObject);
     console.log(parsedMovieDataObject.Actors);
     console.log(parsedMovieDataObject.Director);
     console.log(parsedMovieDataObject.Plot);
+    console.log(parsedMovieDataObject.BoxOffice);
+    console.log(parsedMovieDataObject.Runtime);
+    console.log(parsedMovieDataObject.Genre);
+    console.log(parsedMovieDataObject.Poster);
 
-    }
 
-    setTimeout(populateElements, 1000) 
+
+}
+
+setTimeout(populateElements, 1000)
     // Populate Popularity HTML Elements with values
- 
+
 
 
 
