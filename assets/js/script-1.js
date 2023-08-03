@@ -1,5 +1,8 @@
 // This file contains the js code for seeing how many views a user-specified subject has had on Wikipedia in a ten day period.
 
+// Variable for text field element
+var searchText = document.getElementById("searchField");
+
 // Variables for popularity display elements by year
 var popularity2019El = document.getElementById("popularity2019");
 var popularity2020El = document.getElementById("popularity2020");
@@ -34,13 +37,13 @@ var totalViews2023;
 function retrieveData() {
 
     // Initialize variables for adding up total views
-totalViews2019 = 0;
-totalViews2020 = 0;
-totalViews2021 = 0;
-totalViews2022 = 0;
-totalViews2023 = 0;
+    totalViews2019 = 0;
+    totalViews2020 = 0;
+    totalViews2021 = 0;
+    totalViews2022 = 0;
+    totalViews2023 = 0;
 
-// Pull Movie Title from local storage
+    // Pull Movie Title from local storage
     var subject = JSON.parse(localStorage.getItem("storedcapitalizedInput"));
 
     // Test variable for manipulation without using form input.
@@ -178,59 +181,70 @@ totalViews2023 = 0;
             console.log("Total Views 2023: " + totalViews2023);
 
         })
-    }
+}
 
-    function populateElements() {
+function populateElements() {
 
-        // Pull movie object from local storage
-        var parsedMovieDataObject = JSON.parse(localStorage.getItem("storedparsedMovieData"));
+    // Pull movie object from local storage
+    var parsedMovieDataObject = JSON.parse(localStorage.getItem("storedparsedMovieData"));
 
-        // Add commas to popularity numbers
-        var totalViews2019Format = totalViews2019.toLocaleString("en-US");
-        var totalViews2020Format = totalViews2020.toLocaleString("en-US");
-        var totalViews2021Format = totalViews2021.toLocaleString("en-US");
-        var totalViews2022Format = totalViews2022.toLocaleString("en-US");
-        var totalViews2023Format = totalViews2023.toLocaleString("en-US");
+    // Add commas to popularity numbers
+    var totalViews2019Format = totalViews2019.toLocaleString("en-US");
+    var totalViews2020Format = totalViews2020.toLocaleString("en-US");
+    var totalViews2021Format = totalViews2021.toLocaleString("en-US");
+    var totalViews2022Format = totalViews2022.toLocaleString("en-US");
+    var totalViews2023Format = totalViews2023.toLocaleString("en-US");
 
-        // Send popularity data to HTML
-        popularity2019El.textContent = "Popularity 2019:\xa0\xa0" + totalViews2019Format;
-        popularity2020El.textContent = "Popularity 2020:\xa0\xa0" + totalViews2020Format;
-        popularity2021El.textContent = "Popularity 2021:\xa0\xa0" + totalViews2021Format;
-        popularity2022El.textContent = "Popularity 2022:\xa0\xa0" + totalViews2022Format;
-        popularity2023El.textContent = "Popularity 2023:\xa0\xa0" + totalViews2023Format;
+    // Send popularity data to HTML
+    popularity2019El.textContent = "Popularity 2019:\xa0\xa0" + totalViews2019Format;
+    popularity2020El.textContent = "Popularity 2020:\xa0\xa0" + totalViews2020Format;
+    popularity2021El.textContent = "Popularity 2021:\xa0\xa0" + totalViews2021Format;
+    popularity2022El.textContent = "Popularity 2022:\xa0\xa0" + totalViews2022Format;
+    popularity2023El.textContent = "Popularity 2023:\xa0\xa0" + totalViews2023Format;
 
-        // Send movie data to HTML
-        titleEl.textContent = "Title:\xa0\xa0" + parsedMovieDataObject.Title;
-        genreEl.textContent = "Genre:\xa0\xa0" + parsedMovieDataObject.Genre;
-        releaseDateEl.textContent = "Release Date:\xa0\xa0" + parsedMovieDataObject.Released;
-        yearEl.textContent = "Year:\xa0\xa0" + parsedMovieDataObject.Year;
-        ratingEl.textContent = "Rating:\xa0\xa0" + parsedMovieDataObject.Ratings[0].Source + "\xa0\xa0" + parsedMovieDataObject.Ratings[0].Value;
-        runtimeEl.textContent = "Runtime:\xa0\xa0" + parsedMovieDataObject.Runtime;
-        boxOfficeEl.textContent = "Box Office:\xa0\xa0" + parsedMovieDataObject.BoxOffice;
-        posterEl.setAttribute("src", parsedMovieDataObject.Poster)
+    // Send movie data to HTML
+    titleEl.textContent = "Title:\xa0\xa0" + parsedMovieDataObject.Title;
+    genreEl.textContent = "Genre:\xa0\xa0" + parsedMovieDataObject.Genre;
+    releaseDateEl.textContent = "Release Date:\xa0\xa0" + parsedMovieDataObject.Released;
+    yearEl.textContent = "Year:\xa0\xa0" + parsedMovieDataObject.Year;
+    ratingEl.textContent = "Rating:\xa0\xa0" + parsedMovieDataObject.Ratings[0].Source + "\xa0\xa0" + parsedMovieDataObject.Ratings[0].Value;
+    runtimeEl.textContent = "Runtime:\xa0\xa0" + parsedMovieDataObject.Runtime;
+    boxOfficeEl.textContent = "Box Office:\xa0\xa0" + parsedMovieDataObject.BoxOffice;
+    posterEl.setAttribute("src", parsedMovieDataObject.Poster)
 
-        // Send movie data to console
+    // Send movie data to console
 
-        console.log(parsedMovieDataObject);
-        console.log(parsedMovieDataObject.Title);
-        console.log(parsedMovieDataObject.Released);
-        console.log(parsedMovieDataObject.Year);
-        console.log(parsedMovieDataObject.Rating);
-        console.log(parsedMovieDataObject.BoxOffice);
-        console.log(parsedMovieDataObject.Runtime);
-        console.log(parsedMovieDataObject.Genre);
-        console.log(parsedMovieDataObject.Poster);
+    console.log(parsedMovieDataObject);
+    console.log(parsedMovieDataObject.Title);
+    console.log(parsedMovieDataObject.Released);
+    console.log(parsedMovieDataObject.Year);
+    console.log(parsedMovieDataObject.Rating);
+    console.log(parsedMovieDataObject.BoxOffice);
+    console.log(parsedMovieDataObject.Runtime);
+    console.log(parsedMovieDataObject.Genre);
+    console.log(parsedMovieDataObject.Poster);
 
 
 
-    }
+}
 
 searchButton.addEventListener("click", function (event) {
     event.preventDefault();
     retrieveData()
     // Insert delay to allow all APIs to respond
     setTimeout(populateElements, 1000)
+})
+
+searchText.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        // Call function to fetch movie data here
+        retrieveData()
+        // Insert delay to allow all APIs to respond
+        setTimeout(populateElements, 1000)
+    }
 });
+
 
 
 
