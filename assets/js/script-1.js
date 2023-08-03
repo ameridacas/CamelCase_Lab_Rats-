@@ -34,7 +34,7 @@ var totalViews2021;
 var totalViews2022;
 var totalViews2023;
 
-// This function retrives the Wikipedia article view count data from the Wikimedia API.
+// This function retrieves the Wikipedia article view count data from the Wikimedia API.
 function retrieveData() {
 
     // Initialize variables for adding up total views
