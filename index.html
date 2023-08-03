@@ -35,8 +35,8 @@
                   </div>
                 <!--Display the Api info from the Search here-->
             <block>
-            <div class="grid grid-cols-2 gap-4 flex-wrap mt-8 bg-black text-white text-center h-3/4 align-items" value="displaySearch" type="displaySearch" style="text-shadow: 0 0 10px red;">
-                <img id="poster" class="flex"></img>
+            <div class="grid grid-cols-2 gap-4 flex-wrap flex-shrink mt-8 bg-black text-white text-center h-3/4 align-items" value="displaySearch" type="displaySearch" style="text-shadow: 0 0 10px red;">
+                <img id="poster" class="flex object-scale-down"></img>
                     <!--This will be for the OMDB api data container-->
                         <!--<label for="year" class="block float-right text-lg text-white mb-10px ml-2 justify-items-end">Year</label>
                         <input id="year" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end">
@@ -44,8 +44,6 @@
                         <input id="rating" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end ">
                         <label for="releaseDate" class="block text-lg text-white mb-10px ml-2 justify-items-end">ReleaseDate</label>
                         <input id="releaseDate" type="text" value="displaySearch" class="border-2 w-auto mt-2 p-10px rounded-md justify-items-end">-->
-                    <ul>
-                        <h1>Fun Facts:</h1>
                         <div id="title" value="title" type="text" class="">Title</div>
                         <div id="genre" value="genre" type="text" class="">Genre</div>
                         <div id="releaseDate" value="releaseDate" type="text" class="">ReleaseDate</div>
@@ -56,7 +54,7 @@
                     
                     <!--popularity api containers-->
                         <div> 
-                            <h1>Yearly wikipedia searches:</h1>  
+                            <h1>Yearly Wikipedia Searches:</h1>  
                             <div id="popularity2019" value="2019" type="text" class=""></div>
                             <div id="popularity2020" value="2020" type="text" class=""></div>
                             <div id="popularity2021" value="2021" type="text" class=""></div>
