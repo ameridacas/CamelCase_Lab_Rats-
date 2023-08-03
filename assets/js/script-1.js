@@ -1,4 +1,4 @@
-// This file contains the js code for seeing how many views a user-specified subject has had on Wikipedia in a ten day period.
+// This file contains the js code for seeing how many views a user-specified subject has had on Wikipedia annually since 2019.
 
 // Variable for text field element
 var searchText = document.getElementById("searchField");
@@ -34,6 +34,7 @@ var totalViews2021;
 var totalViews2022;
 var totalViews2023;
 
+// This function retrives the Wikipedia article view count data from the Wikimedia API.
 function retrieveData() {
 
     // Initialize variables for adding up total views
@@ -48,13 +49,8 @@ function retrieveData() {
 
     // Test variable for manipulation without using form input.
     // var subject = "Gladiator";
-
-    // Live variable using form input.
-    // console.log(searchText.value);
-    // var subject = capitalizedInput;
-    // console.log(subject);
-
     console.log(subject);
+
     // Replace spaces in subject with underscores
     var subjectConverted = subject.replace(/\s/g, "_");
     console.log(subjectConverted);
@@ -183,6 +179,7 @@ function retrieveData() {
         })
 }
 
+// This function populates the HTML elements with the retrieved data from both APIs.
 function populateElements() {
 
     // Pull movie object from local storage
@@ -213,7 +210,6 @@ function populateElements() {
     posterEl.setAttribute("src", parsedMovieDataObject.Poster)
 
     // Send movie data to console
-
     console.log(parsedMovieDataObject);
     console.log(parsedMovieDataObject.Title);
     console.log(parsedMovieDataObject.Released);
@@ -223,11 +219,9 @@ function populateElements() {
     console.log(parsedMovieDataObject.Runtime);
     console.log(parsedMovieDataObject.Genre);
     console.log(parsedMovieDataObject.Poster);
-
-
-
 }
 
+// Executes the above functions on Search button click.
 searchButton.addEventListener("click", function (event) {
     event.preventDefault();
     retrieveData()
@@ -235,10 +229,10 @@ searchButton.addEventListener("click", function (event) {
     setTimeout(populateElements, 1000)
 })
 
+// Executes the above functions on Enter key press.
 searchText.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
-        // Call function to fetch movie data here
         retrieveData()
         // Insert delay to allow all APIs to respond
         setTimeout(populateElements, 1000)
