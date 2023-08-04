@@ -3,6 +3,10 @@
 // Variable for text field element
 var searchText = document.getElementById("searchField");
 
+// Variable for text field element
+var wikiLabelEl = document.getElementById("wiki-data");
+
+
 // Variables for popularity display elements by year
 var popularity2019El = document.getElementById("popularity2019");
 var popularity2020El = document.getElementById("popularity2020");
@@ -181,6 +185,9 @@ function retrieveData() {
 
 // This function populates the HTML elements with the retrieved data from both APIs.
 function populateElements() {
+
+    // Display wikipedia label explainer
+    wikiLabelEl.style.display = "block";
 
     // Pull movie object from local storage
     var parsedMovieDataObject = JSON.parse(localStorage.getItem("storedparsedMovieData"));
