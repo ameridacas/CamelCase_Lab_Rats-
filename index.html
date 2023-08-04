@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!--tailwind.config = {}
         theme: {}
           extend: {}
@@ -34,8 +35,8 @@
                   </div>
                 <!--Display the Api info from the Search here-->
             <block>
-            <div class="grid grid-cols-2 gap-4 flex-wrap flex-shrink mt-8 bg-black text-white text-center h-3/4 align-items" value="displaySearch" type="displaySearch" style="text-shadow: 0 0 10px red;">
-                <img id="poster" class="flex object-scale-down" src="" alt=""></img>
+            <div class="grid grid-cols-1 md:grid-cols-2 flex-wrap flex-shrink object-center mt-8 bg-black text-white text-center h-3/4 align-items" value="displaySearch" type="displaySearch" style="text-shadow: 0 0 10px red;">
+                <img id="poster" class="ml-28 mt-5 flex flex-col justify-center object-contain max-h-full max-w-full rounded "></img>
                     <!--This will be for the OMDB api data container-->
                         <!--<label for="year" class="block float-right text-lg text-white mb-10px ml-2 justify-items-end">Year</label>
                         <input id="year" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end">
@@ -43,26 +44,26 @@
                         <input id="rating" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end ">
                         <label for="releaseDate" class="block text-lg text-white mb-10px ml-2 justify-items-end">ReleaseDate</label>
                         <input id="releaseDate" type="text" value="displaySearch" class="border-2 w-auto mt-2 p-10px rounded-md justify-items-end">-->
-                    <div class="flex-col">
-                        <div id="title" value="title" type="text" class="text-xl">Title</div>
-                        <div id="genre" value="genre" type="text" class="text-xl">Genre</div>
-                        <div id="releaseDate" value="releaseDate" type="text" class="text-xl">ReleaseDate</div>
-                        <div id="year" value="year" type="text" class="text-xl">Year</div>
-                        <div id="rating" value="rating" type="text" class="text-xl">Rating</div>
-                        <div id="runtime" value="runtime" type="text" class="text-xl">Runtime</div>
-                        <div id="box-office" value="box-office" type="text" class="text-xl">Box-Office</div>
+                    <div class="flex flex-col justify-center" >
+                        <div id="title" value="title" type="text" class="info-box text-xl"></div>
+                        <div id="genre" value="genre" type="text" class="info-box text-xl"></div>
+                        <div id="releaseDate" value="releaseDate" type="text" class="info-box text-xl "></div>
+                        <div id="year" value="year" type="text" class="info-box text-xl "></div>
+                        <div id="rating" value="rating" type="text" class="info-box text-xl"></div>
+                        <div id="runtime" value="runtime" type="text" class="info-box text-xl"></div>
+                        <div id="box-office" value="box-office" type="text" class="info-box text-xl"></div>
                     
                     <!--popularity api containers-->
-                        <div>
-                            <h1>Yearly Wikipedia Searches:</h1>    
-                            <div id="popularity2019" value="2019" type="text" class="text-xl">2019</div>
-                            <div id="popularity2020" value="2020" type="text" class="text-xl">2020</div>
-                            <div id="popularity2021" value="2021" type="text" class="text-xl">2021</div>
-                            <div id="popularity2022" value="2022" type="text" class="text-xl">2022</div>
-                            <div id="popularity2023" value="2023" type="text" class="text-xl">2023</div>  
+                        <div class="flex-col justify-center flex">
+                            <!--<h1>Yearly Wikipedia Searches:</h1>-->    
+                            <div id="popularity2019" value="2019" type="text" class="info-box text-xl">2019</div>
+                            <div id="popularity2020" value="2020" type="text" class="info-box text-xl">2020</div>
+                            <div id="popularity2021" value="2021" type="text" class="info-box text-xl">2021</div>
+                            <div id="popularity2022" value="2022" type="text" class="info-box text-xl">2022</div>
+                            <div id="popularity2023" value="2023" type="text" class="info-box text-xl">2023</div>  
                         </div>
                     </div>
-                </div>
+                </div> 
             </block>   
         </div>
     <!--movie popularity number place holder, poster image place holder, title, year, rating, runtime, release date, genre, box-office #, 0 is INDB ,1-metic critic-->
