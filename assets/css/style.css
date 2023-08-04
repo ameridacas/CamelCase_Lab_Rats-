@@ -22,7 +22,15 @@
   h6 {
     font-size: 100%;
   }
-  
+ 
+  .info-box {
+    display: inline-flexbox;
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
   input,
   select,
   option,
@@ -40,3 +48,9 @@
     list-style: none;
   }
   
+  @media screen and (max-width: 768px) {
+    /* For  screens with a width of 768 pixels or less */
+  }
+  @media screen and (max-width:1280) {
+    /* For  screens with a width of 1280 pixels or less */
+  }
