@@ -20,23 +20,22 @@
     <form class="flex h-screen items-center justify-center bg-no-repeat bg-cover" style="background-image: url(./assets/images/curtain-bg.webp);">
         <main id="displayD" style="display: none;" index="0"></main>
         <div class="w-3/4 h-4/5 p-6 m-2 shadow-2xl shadow-white bg-black justify-center rounded-md ">
-             <span class="block md:w-auto xl:w-auto justify-center bg-black text-xl font-serif text-center text-white" style="text-shadow: 0 0 10px red;">Want to know some Fun Facts about your favorite Movie?</span>
-                <h1 class="text-white text-2xl" style="text-shadow: 0 0 10px red;"></h1>
+             <span class="block md:w-auto xl:w-auto justify-center bg-black text-xl font-serif text-center text-white" style="text-shadow: 0 0 10px red;">Want To Know Some Fun Facts About Your Favorite Movie?</span>
                 <hr class="pt-20px">
             <!--<label for="title" class="inline-block text-lg text-white mb-10px ml-2 " style="text-shadow: 0 0 10px red;">Title</label>
                 <input type="text" id="search" class="border-2 w-auto mt-2 rounded-md ">-->
                 <!-- <label for="button" type="button" value="button" class="bg-indigo-800 w-24 h-7 ml-2 text-white text-center text-10px rounded-md ">Search</label>-->
-                <div class="flex items-center justify-center mt-2">
-                    <label for="searchField" class="inline-block text-3xl mr-1 text-white mb-10px ml-2 " style="text-shadow: 0 0 10px red;">Title:</label>
+                <div class="flex flex-shrink items-center justify-center mt-2">
+                    <label for="searchField" class="text-3xl mr-1 text-white mb-10px ml-2 " style="text-shadow: 0 0 10px red;">Title:</label>
                     <input id="searchField" type="text" placeholder="Search Movie" class="px-4 py-2 h-10 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-600 bg-indigo-200 text-gray-800">
-                    <button id="searchButton" class="px-4 py-2 w-24 h-10 rounded-r-lg bg-indigo-800 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-800 border-2">
+                    <button id="searchButton" class="flex px-4 py-2 w-24 h-10 rounded-r-lg bg-indigo-800 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-800 border-2">
                       Search
                     </button>
                   </div>
                 <!--Display the Api info from the Search here-->
             <block>
-            <div class="grid grid-cols-2 gap-4 flex-wrap flex-shrink mt-8 bg-black text-white text-center h-3/4 align-items" value="displaySearch" type="displaySearch" style="text-shadow: 0 0 10px red;">
-                <img id="poster" class="flex object-scale-down"></img>
+            <div class="grid grid-cols-2 gap-4 flex-wrap flex-shrink flex-shrink mt-8 bg-black text-white text-center h-3/4 align-items" value="displaySearch" type="displaySearch" style="text-shadow: 0 0 10px red;">
+                <img id="poster" class="flex object-scale-down object-scale-down" src="" alt=""></img>
                     <!--This will be for the OMDB api data container-->
                         <!--<label for="year" class="block float-right text-lg text-white mb-10px ml-2 justify-items-end">Year</label>
                         <input id="year" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end">
@@ -44,22 +43,23 @@
                         <input id="rating" type="text" value="displaySearch" class="border-2 w-auto mt-2 rounded-md justify-items-end ">
                         <label for="releaseDate" class="block text-lg text-white mb-10px ml-2 justify-items-end">ReleaseDate</label>
                         <input id="releaseDate" type="text" value="displaySearch" class="border-2 w-auto mt-2 p-10px rounded-md justify-items-end">-->
-                        <div id="title" value="title" type="text" class="">Title</div>
-                        <div id="genre" value="genre" type="text" class="">Genre</div>
-                        <div id="releaseDate" value="releaseDate" type="text" class="">ReleaseDate</div>
-                        <div id="year" value="year" type="text" class="">YEAR</div>
-                        <div id="rating" value="rating" type="text" class="">Rating</div>
-                        <div id="runtime" value="runtime" type="text" class="">Runtime</div>
-                        <div id="box-office" value="box-office" type="text" class="">Box-Office</div>
+                    <div class="flex-col">
+                        <div id="title" value="title" type="text" class="text-xl">Title</div>
+                        <div id="genre" value="genre" type="text" class="text-xl">Genre</div>
+                        <div id="releaseDate" value="releaseDate" type="text" class="text-xl">ReleaseDate</div>
+                        <div id="year" value="year" type="text" class="text-xl">Year</div>
+                        <div id="rating" value="rating" type="text" class="text-xl">Rating</div>
+                        <div id="runtime" value="runtime" type="text" class="text-xl">Runtime</div>
+                        <div id="box-office" value="box-office" type="text" class="text-xl">Box-Office</div>
                     
                     <!--popularity api containers-->
-                        <div> 
-                            <h1>Yearly Wikipedia Searches:</h1>  
-                            <div id="popularity2019" value="2019" type="text" class=""></div>
-                            <div id="popularity2020" value="2020" type="text" class=""></div>
-                            <div id="popularity2021" value="2021" type="text" class=""></div>
-                            <div id="popularity2022" value="2022" type="text" class=""></div>
-                            <div id="popularity2023" value="2023" type="text" class=""></div>  
+                        <div>
+                            <h1>Yearly Wikipedia Searches:</h1>    
+                            <div id="popularity2019" value="2019" type="text" class="text-xl">2019</div>
+                            <div id="popularity2020" value="2020" type="text" class="text-xl">2020</div>
+                            <div id="popularity2021" value="2021" type="text" class="text-xl">2021</div>
+                            <div id="popularity2022" value="2022" type="text" class="text-xl">2022</div>
+                            <div id="popularity2023" value="2023" type="text" class="text-xl">2023</div>  
                         </div>
                     </div>
                 </div>
